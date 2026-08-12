@@ -1,0 +1,5 @@
+config SHIELD_SIDE48_R
+    def_bool $(shields_list_contains,side48_r)
+
+config SHIELD_SIDE48_L
+    def_bool $(shields_list_contains,side48_l)

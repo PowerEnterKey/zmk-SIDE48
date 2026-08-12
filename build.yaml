@@ -1,0 +1,16 @@
+include:
+# Right
+  - board: seeeduino_xiao_ble
+    shield: side48_r rgbled_adapter
+    snippet: studio-rpc-usb-uart
+    artifact-name: SIDE48_R
+
+# Left
+  - board: seeeduino_xiao_ble
+    shield: side48_l rgbled_adapter
+    artifact-name: SIDE48_L
+
+# Reset
+  - board: seeeduino_xiao_ble
+    shield: settings_reset
+    artifact-name: SIDE48_RESET
