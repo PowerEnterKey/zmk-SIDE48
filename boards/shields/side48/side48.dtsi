@@ -107,6 +107,14 @@
             ;
     };
 
+    trackball_listener: trackball_listener {
+        compatible = "zmk,input-listener";
+        status = "disabled";
+        input-processors = 
+            //<&zip_xy_transform INPUT_TRANSFORM_XY_SWAP>,  //カーソル移動のXとYを入れ替える
+            <&zip_xy_scaler 1 2>;                           //カーソル移動量を1/2倍に変更
+    };
+
     // Encoders
     left_encoder: left_encoder {
        compatible = "alps,ec11";
