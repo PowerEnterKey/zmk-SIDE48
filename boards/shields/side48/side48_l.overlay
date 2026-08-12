@@ -3,13 +3,8 @@
 
 //encoderの設定
 &left_encoder{
-<<<<<<< HEAD
     a-gpios = <&gpio0  9 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
     b-gpios = <&gpio0 10 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
-=======
-    a-gpios = <&&gpio0  9 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
-    b-gpios = <&&gpio0 10 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
->>>>>>> 58f3d33f9f697712652ee57d4163a45d523e5194
     steps = <24>;
     status = "okay";
 };
