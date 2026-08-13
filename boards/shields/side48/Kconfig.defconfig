@@ -9,6 +9,15 @@ config ZMK_BLE
 config ZMK_SPLIT_ROLE_CENTRAL
     default y
 
+config INPUT
+    default y
+
+config ZMK_POINTING
+    default y
+
+config SPI
+    default y
+
 endif
 
 
