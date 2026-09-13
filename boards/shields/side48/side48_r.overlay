@@ -56,7 +56,7 @@
     scroller {
         layers = <2>;
         input-processors = 
-                <&zip_x_scaler 0 1>                                 //X方向の移動量を0倍にして無効化
+                <&zip_x_scaler 0 1>,                                //X方向の移動量を0倍にして無効化
                 <&zip_xy_to_scroll_mapper>,                         //スクロールモードに変更
                 <&zip_scroll_scaler 1 15>,                          //移動量1/15
                 <&zip_scroll_transform INPUT_TRANSFORM_Y_INVERT>;   //カーソル移動のY方向を反転する
