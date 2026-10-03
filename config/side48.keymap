@@ -75,7 +75,7 @@
 
         default_layer {
             bindings = <
-&kp UP     &kp RIGHT  &kp LEFT  &kp DOWN  &kp GRAVE        &kp GRAVE           &mkp MB1    &mkp MB2     &kp MB3    
+&kp UP     &kp RIGHT  &kp LEFT  &kp DOWN  &kp GRAVE        &kp GRAVE           &mkp MB1    &mkp MB2     &kp MB3                                             //左から未使用、未使用、未使用、未使用、未使用、未使用、上側マウスボタン、下側マウスボタン、未使用
 &kp TAB    &kp Q      &kp W     &kp E     &kp R            &kp T               &kp Y       &kp U        &kp I         &kp O     &kp P          &kp DELETE
 &kp LCTRL  &kp A      &kp S     &kp D     &kp F            &kp G               &kp H       &kp J        &kp K         &kp L     &kp SEMICOLON  &kp MINUS
 &kp LSHFT  &kp Z      &kp X     &kp C     &kp V            &kp B               &kp N       &kp M        &kp COMMA     &kp DOT   &kp UP         &kp SLASH
