@@ -1,5 +1,6 @@
 #include "side48.dtsi"
 #include <input/processors.dtsi>
+#include <input/processors/runtime-input-processor.dtsi>
 
 
 &default_transform {
@@ -53,13 +54,17 @@
 &trackball_listener {
     status = "okay";
     device = <&trackball>;
+    input-processors =
+            <&zip_xy_scaler 1 2>,                                   //カーソル移動量を1/2倍に変更(従来設定)
+            <&mouse_runtime_input_processor>;                       //DYA Studioからランタイムで調整
     scroller {
         layers = <2>;
         input-processors = 
                 <&zip_x_scaler 0 1>,                                //X方向の移動量を0倍にして無効化
                 <&zip_xy_to_scroll_mapper>,                         //スクロールモードに変更
-                <&zip_scroll_scaler 1 15>,                          //移動量1/15
-                <&zip_scroll_transform INPUT_TRANSFORM_Y_INVERT>;   //カーソル移動のY方向を反転する
+                <&zip_scroll_scaler 1 30>,                          //移動量1/30
+                <&zip_scroll_transform INPUT_TRANSFORM_Y_INVERT>,   //カーソル移動のY方向を反転する
+                <&scroll_runtime_input_processor>;                  //DYA Studioからランタイムで調整
     };
 };
 

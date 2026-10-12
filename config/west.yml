@@ -1,18 +1,32 @@
 manifest:
   remotes:
+    - name: cormoran    # DYA Studio 対応 ZMK fork / モジュール
+      url-base: https://github.com/cormoran
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
     - name: powerenterkey
       url-base: https://github.com/PowerEnterKey
     - name: caksoylar  # RGB LED
-      url-base: https://github.com/caksoylar  
+      url-base: https://github.com/caksoylar
     - name: badjeff    # PMW3610
       url-base: https://github.com/badjeff
   projects:
+    # DYA Studio 用に、カスタム Studio RPC を含む cormoran の ZMK v0.3 fork を使う
     - name: zmk
-      remote: zmkfirmware
-      revision: v0.3
+      remote: cormoran
+      revision: v0.3-branch+dya
       import: app/west.yml
+    # --- DYA Studio 拡張モジュール ---
+    - name: zmk-module-ble-management        # 接続(BLEプロファイル)管理
+      remote: cormoran
+      revision: main
+    - name: zmk-module-settings-rpc          # デバイス設定
+      remote: cormoran
+      revision: main
+    - name: zmk-module-runtime-input-processor  # トラックボール設定をランタイムで変更
+      remote: cormoran
+      revision: main
+    # --- 既存 ---
     - name: zmk-rgbled-widget
       remote: caksoylar
       revision: v0.3-branch
