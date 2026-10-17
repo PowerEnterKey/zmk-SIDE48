@@ -26,6 +26,9 @@ manifest:
     - name: zmk-module-runtime-input-processor  # トラックボール設定をランタイムで変更
       remote: cormoran
       revision: zmk-v0.3.0.0
+    - name: zmk-behavior-runtime-sensor-rotate
+      remote: cormoran
+      revision: zmk-v0.3.0.0
     # --- 既存 ---
     - name: zmk-rgbled-widget
       remote: caksoylar
