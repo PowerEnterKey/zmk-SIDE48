@@ -31,11 +31,11 @@ manifest:
       revision: zmk-v0.3.0.0
     - name: zmk-feature-runtime-macro
       remote: cormoran
-      revision: <TAG>
+      revision: zmk-v0.3.0.0
       import: true
     - name: zmk-feature-runtime-combo
       remote: cormoran
-      revision: <TAG>
+      revision: zmk-v0.3.0.0
       import: true
     # --- 既存 ---
     - name: zmk-rgbled-widget
