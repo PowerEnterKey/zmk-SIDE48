@@ -19,10 +19,10 @@ manifest:
     # --- DYA Studio 拡張モジュール ---
     - name: zmk-module-ble-management        # 接続(BLEプロファイル)管理
       remote: cormoran
-      revision: main
+      revision: zmk-v0.3.0.0
     - name: zmk-module-settings-rpc          # デバイス設定
       remote: cormoran
-      revision: main
+      revision: zmk-v0.3.0.0
     - name: zmk-module-runtime-input-processor  # トラックボール設定をランタイムで変更
       remote: cormoran
       revision: zmk-v0.3.0.0
