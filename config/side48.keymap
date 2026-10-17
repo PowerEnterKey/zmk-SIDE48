@@ -74,7 +74,8 @@
 
         default_layer {
             bindings = <
-&kp UP     &kp RIGHT  &kp LEFT  &kp DOWN  &kp GRAVE        &kp GRAVE           &mkp MB1    &mkp MB2     &kp MB3                                             //左から未使用、未使用、未使用、未使用、未使用、未使用、上側マウスボタン、下側マウスボタン、未使用
+//&kp UP     &kp RIGHT  &kp LEFT  &kp DOWN  &kp GRAVE        &kp GRAVE           &mkp MB1    &mkp MB2     &kp MB3                                             //左から未使用、未使用、未使用、未使用、未使用、未使用、上側マウスボタン、下側マウスボタン、未使用
+                                                                               &mkp MB1    &mkp MB2                                                      //左から上側マウスボタン、下側マウスボタン
 &kp TAB    &kp Q      &kp W     &kp E     &kp R            &kp T               &kp Y       &kp U        &kp I         &kp O     &kp P          &kp DELETE
 &kp LCTRL  &kp A      &kp S     &kp D     &kp F            &kp G               &kp H       &kp J        &kp K         &kp L     &kp SEMICOLON  &kp MINUS
 &kp LSHFT  &kp Z      &kp X     &kp C     &kp V            &kp B               &kp N       &kp M        &kp COMMA     &kp DOT   &kp UP         &kp SLASH
@@ -85,7 +86,8 @@
 
         layer_1 {
             bindings = <
-&trans  &trans        &trans        &trans           &trans           &trans          &trans        &trans         &trans    
+//&trans  &trans        &trans        &trans           &trans           &trans          &trans        &trans         &trans    
+                                                                                      &trans        &trans   
 &trans  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3     &kp NUMBER_4     &kp NUMBER_5    &kp NUMBER_6  &kp NUMBER_7   &kp NUMBER_8   &kp NUMBER_9  &kp NUMBER_0   &trans
 &trans  &trans        &trans        &kp JP_LBRACKET  &kp JP_RBRACKET  &trans          &trans        &kp NUMBER_4   &kp NUMBER_5   &kp NUMBER_6  &kp JP_COLON   &kp JP_UNDERSCORE
 &trans  &trans        &trans        &kp JP_LPAREN    &kp JP_RPAREN    &trans          &trans        &kp NUMBER_1   &kp NUMBER_2   &kp NUMBER_3  &kp PIPE       &trans
@@ -96,7 +98,7 @@
 
         layer_2 {
             bindings = <
-&trans  &trans           &trans     &trans     &trans      &trans          &trans        &trans             &trans    
+                                                                           &trans             &trans    
 &trans  &kp EXCLAMATION  &kp JP_AT  &kp POUND  &kp DOLLAR  &kp PERCENT     &kp JP_CARET  &kp JP_AMPERSAND   &kp JP_ASTERISK   &kp MINUS    &kp UNDERSCORE   &trans
 &trans  &kp GRAVE        &kp TILDE  &trans     &trans      &kp C_VOL_UP    &kp C_VOL_DN  &kp DOUBLE_QUOTES  &kp SINGLE_QUOTE  &kp JP_PLUS  &kp JP_ASTERISK  &trans
 &trans  &trans           &trans     &trans     &trans      &trans          &mkp MB4      &mkp MB5           &trans            &trans       &trans           &trans
@@ -107,7 +109,7 @@
 
         layer_3 {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans     &trans  &trans    &trans    
+                                                   &trans  &trans    
 &mo 4   &kp F1  &kp F2  &kp F3  &kp F4  &kp F5     &kp F6  &kp F7    &kp F8    &kp F9     &kp F10  &kp F11
 &trans  &trans  &trans  &trans  &trans  &trans     &trans  &kp LEFT  &kp UP    &kp RIGHT  &trans   &kp F12
 &trans  &trans  &trans  &trans  &trans  &trans     &trans  &trans    &kp DOWN  &trans     &trans   &trans
@@ -118,7 +120,7 @@
 
         layer_4 {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans    &trans       &trans        &trans    
+                                                  &trans        &trans    
 &trans  &trans  &trans  &trans  &trans  &trans    &trans       &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
 &trans  &trans  &trans  &trans  &trans  &trans    &trans       &tog 6        &trans        &trans        &trans        &bt BT_CLR
 &trans  &trans  &trans  &trans  &trans  &trans    &bootloader  &trans        &trans        &trans        &trans        &bt BT_CLR_ALL
