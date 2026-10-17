@@ -29,14 +29,6 @@ manifest:
     - name: zmk-behavior-runtime-sensor-rotate
       remote: cormoran
       revision: zmk-v0.3.0.0
-    - name: zmk-feature-runtime-macro
-      remote: cormoran
-      revision: zmk-v0.3.0.0
-      import: true
-    - name: zmk-feature-runtime-combo
-      remote: cormoran
-      revision: zmk-v0.3.0.0
-      import: true
     # --- 既存 ---
     - name: zmk-rgbled-widget
       remote: caksoylar
