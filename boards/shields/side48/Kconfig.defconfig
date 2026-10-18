@@ -23,11 +23,11 @@ endif
 
 if SHIELD_SIDE48_R || SHIELD_SIDE48_L
 
-config NFCT_PINS_AS_GPIOS
-    default y
-
 config ZMK_SPLIT
     default y
+
+config ZMK_KSCAN_CHARLIEPLEX_WAIT_BEFORE_INPUTS
+    default 20
 
 config RGBLED_WIDGET_BATTERY_LEVEL_HIGH
     default 30

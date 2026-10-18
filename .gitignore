@@ -1,0 +1,6 @@
+dependencies/
+build/
+external
+.west
+zmk
+.vscode

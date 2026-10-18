@@ -97,7 +97,8 @@
 
     kscan0: kscan {
         compatible = "zmk,kscan-gpio-charlieplex";
-        label = "KSCAN";
+        debounce-press-ms = <5>;
+        debounce-release-ms = <7>;
         interrupt-gpios = <&xiao_d 6 (GPIO_ACTIVE_HIGH)>;
         gpios
             = <&xiao_d  0 (GPIO_ACTIVE_HIGH)>
@@ -160,4 +161,14 @@
    };
 
 
+};
+
+// NFCピン(P0.09/P0.10)をGPIOとして使う (Zephyr 4.1ではKconfigではなくdevicetreeで指定)
+&uicr {
+    nfct-pins-as-gpios;
+};
+
+// Studio RPC / ログ用のUSB CDCと衝突しないよう、ボード標準のCDC ACMは無効化
+&board_cdc_acm_uart {
+    status = "disabled";
 };

@@ -1,0 +1,60 @@
+manifest:
+  version: 1.2
+  defaults:
+    remote: cormoran
+    revision: main
+  remotes:
+    - name: cormoran
+      url-base: https://github.com/cormoran
+    - name: zmkfirmware
+      url-base: https://github.com/zmkfirmware
+    - name: caksoylar   # RGB LED
+      url-base: https://github.com/caksoylar
+  projects:
+    - name: zmk-west-commands
+      import: true
+    - name: zmk
+      import:
+        file: app/west.yml
+      clone-depth: 1
+      revision: main+dya
+    - name: zephyr
+      revision: v4.1.0+zmk-fixes+nrf-half-duplex-uart
+      clone-depth: 1
+      import:
+        name-blocklist:
+          - ci-tools
+          - hal_altera
+          - hal_cypress
+          - hal_infineon
+          - hal_microchip
+          - hal_nxp
+          - hal_openisa
+          - hal_silabs
+          - hal_xtensa
+          - hal_st
+          - hal_ti
+          - loramac-node
+          - mcuboot
+          - mcumgr
+          - net-tools
+          - openthread
+          - edtt
+          - trusted-firmware-m
+    # --- トラックボール (PMW3610) ---
+    - name: zmk-driver-pmw3610-with-custom-studio-rpc
+    # --- DYA Studio 拡張モジュール ---
+    - name: zmk-module-ble-management
+    - name: zmk-module-settings-rpc
+    - name: zmk-module-runtime-input-processor
+    - name: zmk-behavior-runtime-sensor-rotate
+      revision: feat/custom-settings-storage
+    - name: zmk-feature-custom-settings
+    - name: zmk-feature-runtime-combo
+    - name: zmk-feature-runtime-macro
+    # --- RGB LED ---
+    - name: zmk-rgbled-widget
+      remote: caksoylar
+      revision: main
+  self:
+    path: config

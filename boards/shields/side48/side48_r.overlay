@@ -1,6 +1,7 @@
 #include "side48.dtsi"
 #include <input/processors.dtsi>
 #include <input/processors/runtime-input-processor.dtsi>
+#include <dt-bindings/zmk/runtime_input_processor.h>
 
 
 &default_transform {
@@ -38,7 +39,7 @@
 
     trackball: trackball@0 {
         status = "okay";
-        compatible = "pixart,pmw3610-alt";
+        compatible = "cormoran,pmw3610";
         reg = <0>;
         spi-max-frequency = <1000000>;
         irq-gpios = <&xiao_d 8 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>; //P1.13(MOTION)
@@ -47,7 +48,25 @@
         x-input-code = <INPUT_REL_X>;
         y-input-code = <INPUT_REL_Y>;
         force-awake;
+        disable-burst-read;     //MOSI/MISOを1本の線で共用しているため、バーストリードは無効
     };
+};
+
+// DYA Studioからランタイムで調整できる入力プロセッサ
+&mouse_runtime_input_processor {
+    processor-label = "mouse";
+    scale-divisor = <2>;                        //カーソル移動量を1/2倍(従来の zip_xy_scaler 1 2 相当)
+};
+
+&scroll_runtime_input_processor {
+    processor-label = "scroll";
+    active-layers = <4>;                        //レイヤー2(BIT(2))でスクロールモード
+    x-codes = <INPUT_REL_X>;
+    y-codes = <INPUT_REL_Y>;
+    xy-to-scroll-enabled;                       //移動量をスクロールに変換
+    scale-divisor = <15>;                       //スクロール量を1/15倍(従来設定)
+    axis-snap-mode = <AXIS_SNAP_MODE_Y>;        //縦スクロールのみ(従来のX方向無効化に相当)
+    axis-snap-threshold = <200>;
 };
 
 // Overrides for the input listener node
@@ -55,17 +74,9 @@
     status = "okay";
     device = <&trackball>;
     input-processors =
-            <&zip_xy_scaler 1 2>,                                   //カーソル移動量を1/2倍に変更(従来設定)
-            <&mouse_runtime_input_processor>;                       //DYA Studioからランタイムで調整
-    scroller {
-        layers = <2>;
-        input-processors = 
-                <&zip_x_scaler 0 1>,                                //X方向の移動量を0倍にして無効化
-                <&zip_xy_to_scroll_mapper>,                         //スクロールモードに変更
-                <&zip_scroll_scaler 1 20>,                          //移動量1/20
-                <&zip_scroll_transform INPUT_TRANSFORM_Y_INVERT>,   //カーソル移動のY方向を反転する
-                <&scroll_runtime_input_processor>;                  //DYA Studioからランタイムで調整
-    };
+            <&mouse_runtime_input_processor>,
+            <&scroll_runtime_input_processor>,
+            <&zip_scroll_transform INPUT_TRANSFORM_Y_INVERT>;   //スクロールのY方向を反転
 };
 
 
