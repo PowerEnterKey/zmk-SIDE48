@@ -2,15 +2,14 @@ name: Build ZMK firmware
 
 on:
   push:
-    branches:
-      - main
   pull_request:
   workflow_dispatch:
     inputs:
       release:
         description: "Create a release artifact with given version"
-        required: true
-
+        required: false
+        default: ""
+        
 jobs:
   build:
     runs-on: ubuntu-latest
